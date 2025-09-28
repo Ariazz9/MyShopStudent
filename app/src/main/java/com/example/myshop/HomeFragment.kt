@@ -37,12 +37,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
         }
 
-        // Default value sebelum ada data dari Profile
         binding.viewName.text = getString(R.string.nama_label) + " " + getString(R.string.default_value)
         binding.viewNIM.text = getString(R.string.nim_label) + " " + getString(R.string.default_value)
         binding.viewAlamat.text = getString(R.string.alamat_label) + " " + getString(R.string.default_value)
 
-        // Observe data setelah submit
         findNavController().currentBackStackEntry
             ?.savedStateHandle
             ?.getLiveData<Triple<String, String, String>>("homeData")

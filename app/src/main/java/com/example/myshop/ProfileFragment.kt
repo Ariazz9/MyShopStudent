@@ -24,7 +24,6 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Klik provinsi → pindah ke AddressFragment
         binding.edtAlamat.setOnClickListener {
             val action = ProfileFragmentDirections.actionProfileFragmentToAddressFragment()
             findNavController().navigate(action)
@@ -38,7 +37,7 @@ class ProfileFragment : Fragment() {
                 binding.edtAlamat.setText(result)
             }
 
-        // di ProfileFragment
+
         binding.btnSimpan.setOnClickListener {
             val nama = binding.edtName.text.toString()
             val nim = binding.edtNIM.text.toString()
@@ -48,7 +47,7 @@ class ProfileFragment : Fragment() {
                 .savedStateHandle
                 .set("homeData", Triple(nama, nim, alamat))
 
-            // tetap stay di Profile, jangan navigate ke Home
+
             findNavController().popBackStack()
 
         }

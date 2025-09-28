@@ -25,10 +25,8 @@ class AddressFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-            // Perbaiki baris ini
             val provinces = resources.getStringArray(R.array.provinces)
 
-            // Perbaiki baris ini
             val adapterProvinces = ArrayAdapter(
                 requireContext(),
                 android.R.layout.simple_spinner_item, // Gunakan layout bawaan Android
